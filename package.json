@@ -1,18 +1,20 @@
 {
   "name": "vs-code-runner",
-  "displayName": "VsCode Code Runner",
+  "displayName": "vscode-runner",
   "description": "Run C, C++, Java, JavaScript, PHP, Python, Perl, Ruby, Go, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, R, Visual Basic .NET, Objective-C, Rust, Kotlin, Dart, and Haskell",
   "version": "1.0.0",
   "featureFlags": {
     "usingNewPythonInterpreterPathApi": true,
     "usingNewPythonInterpreterPathApiV2": true
   },
-  "publisher": "Harry Hopkinson",
+  "publisher": "HarryHopkinson",
   "engines": {
     "vscode": "^1.56.0"
   },
   "categories": [
     "Programming Languages",
+    "Debuggers",
+    "Testing",
     "Other"
   ],
   "keywords": [
@@ -23,7 +25,9 @@
     "ruby",
     "multi-root ready",
     "C#",
-    "C"
+    "C",
+    "java",
+    "typescript"
   ],
   "homepage": "https://github.com/Harry-Hopkinson/vs-code-runner/blob/main/README.md",
   "repository": {
