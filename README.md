@@ -1,3 +1,5 @@
+[Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/harryhopkinson.vs-code-runner.svg)](https://marketplace.visualstudio.com/items?itemName=harryhopkinson.vs-code-runner) [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/harryhopkinson.vs-code-runner.svg)]
+
 # vs-code-runner
 
 <a href="https://github.com/Harry-Hopkinson">
