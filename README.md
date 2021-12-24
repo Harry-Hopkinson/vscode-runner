@@ -18,3 +18,6 @@ C, C++, Java, JavaScript, PHP, Python, Perl, Ruby, Go, C#, VBScript, TypeScript,
   * or press `F1` and then select/type `Stop Code Run`
   * or click `Stop Code Run` button in editor title menu
   * or right click the Output Channel and then click `Stop Code Run` in context menu
+
+For the Terminal Output disable auto scrolling for a cleaner experience.
+<src="images/auto-scroll.PNG>
