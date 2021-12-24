@@ -2,9 +2,10 @@
 import * as vscode from "vscode";
 import { CodeManager } from "./codeManager";
 
-export function active(context: vscode.ExtensionContext) {
+export function activate(context: vscode.ExtensionContext) {
+
     const codeManager = new CodeManager();
-    
+
     vscode.window.onDidCloseTerminal(() => {
         codeManager.onDidCloseTerminal();
     });

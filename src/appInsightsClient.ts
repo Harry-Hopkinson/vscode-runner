@@ -7,7 +7,8 @@ export class AppInsightsClient {
     private _enableAppInsights;
 
     constructor() {
-        const config = vscode.workspace.getConfiguration("vs-code-runner");
+        this._client = appInsights.getClient("a25ddf11-20fc-45c6-96ae-524f47754f28");
+        const config = vscode.workspace.getConfiguration("code-runner");
         this._enableAppInsights = config.get<boolean>("enableAppInsights");
     }
 
