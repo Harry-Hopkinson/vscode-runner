@@ -20,4 +20,7 @@ C, C++, Java, JavaScript, PHP, Python, Perl, Ruby, Go, C#, VBScript, TypeScript,
   * or right click the Output Channel and then click `Stop Code Run` in context menu
 
 For the Terminal Output disable auto scrolling for a cleaner experience.
-<src="images/auto-scroll.PNG>
+
+<a>
+	<src="images/auto-scroll.PNG>
+<a/b>
