@@ -21,6 +21,4 @@ C, C++, Java, JavaScript, PHP, Python, Perl, Ruby, Go, C#, VBScript, TypeScript,
 
 For the Terminal Output disable auto scrolling for a cleaner experience.
 
-<a>
-	<src=images/auto-scroll.PNG>
-<a/>
+<src=images/auto-scroll.PNG>
