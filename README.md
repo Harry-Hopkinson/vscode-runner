@@ -23,4 +23,4 @@ For the Terminal Output disable auto scrolling for a cleaner experience.
 
 <a>
 	<src="images/auto-scroll.PNG>
-<a/b>
+<a/>
