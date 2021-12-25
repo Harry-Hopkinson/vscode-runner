@@ -2,12 +2,13 @@
   "name": "vs-code-runner",
   "displayName": "vscode-runner",
   "description": "Run C, C++, Java, JavaScript, PHP, Python, Perl, Ruby, Go, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, R, Visual Basic .NET, Objective-C, Rust, Kotlin, Dart, and Haskell",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "featureFlags": {
     "usingNewPythonInterpreterPathApi": true,
     "usingNewPythonInterpreterPathApiV2": true
   },
   "publisher": "HarryHopkinson",
+  "icon": "./images/icon.png",
   "engines": {
     "vscode": "^1.56.0"
   },
@@ -31,7 +32,8 @@
   ],
   "homepage": "https://github.com/Harry-Hopkinson/vs-code-runner/blob/main/README.md",
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "https://github.com/Harry-Hopkinson/vs-code-runner.git"
   },
   "activationEvents": [
     "onCommand:code-runner.run",
