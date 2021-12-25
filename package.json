@@ -8,7 +8,7 @@
     "usingNewPythonInterpreterPathApiV2": true
   },
   "publisher": "HarryHopkinson",
-  "icon": "images/icon.png",
+  "icon": "./images/icon.png",
   "engines": {
     "vscode": "^1.56.0"
   },
@@ -379,6 +379,7 @@
     "dotenv": "^10.0.0",
     "micromatch": "^4.0.2",
     "tree-kill": "^1.2.2",
+    "tsc": "^2.0.3",
     "vsce": "^2.5.3"
   },
   "devDependencies": {
