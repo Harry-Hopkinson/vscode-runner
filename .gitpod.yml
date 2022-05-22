@@ -1,2 +1,2 @@
 tasks:
-  - init: npm install && npm run compile
+  - init: yarn && yarn compile
