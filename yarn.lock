@@ -82,11 +82,13 @@ ansi-styles@^3.2.0, ansi-styles@^3.2.1:
   dependencies:
     color-convert "^1.9.0"
 
-applicationinsights@^0.19.0:
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/applicationinsights/-/applicationinsights-0.19.0.tgz#8b3af3d4df05429c127cd64431cb81e406097d83"
-  integrity sha512-0MYDTLZAcatZCRUrCbTTrM1EGAxk8iJ0dLTOjGVSxeuuKLPV6obKQ8mb/zBMDP7OlsAGmeCbTXJT1G2Yu64Bsg==
+applicationinsights@^0.22.0:
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/applicationinsights/-/applicationinsights-0.22.0.tgz#b96e7926d0e311b3fdc68dbcd35d7232616d138e"
+  integrity sha512-hwfGl3/fjmZzkRY076gI1b1lm8dxjgfkXKlZES98NKFbL8xTDllIGDUDf8KZ252S9nKHCy0wEdz4FIymmpZKQQ==
   dependencies:
+    diagnostic-channel "0.2.0"
+    diagnostic-channel-publishers "0.2.1"
     zone.js "0.7.6"
 
 aproba@^1.0.3:
@@ -356,6 +358,18 @@ detect-libc@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-2.0.1.tgz#e1897aa88fa6ad197862937fbc0441ef352ee0cd"
   integrity sha512-463v3ZeIrcWtdgIg6vI6XUncguvr2TnGl4SzDXinkt9mSLpBJKXT3mW6xT3VQdDN11+WVs29pgvivTc4Lp8v+w==
+
+diagnostic-channel-publishers@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/diagnostic-channel-publishers/-/diagnostic-channel-publishers-0.2.1.tgz#8e2d607a8b6d79fe880b548bc58cc6beb288c4f3"
+  integrity sha512-8BSV2eYjP/bzJuNZEBaAjCaZf7a784okd0xdobL2or0Y63wVeac/Hj0rr6DhzhMzZOAeOFbPjZKivRUHxxQJYA==
+
+diagnostic-channel@0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/diagnostic-channel/-/diagnostic-channel-0.2.0.tgz#cc99af9612c23fb1fff13612c72f2cbfaa8d5a17"
+  integrity sha512-awkcaaNNi0RfUGJf7r2+K4oJs1OyiIG2m/Jwvyi0OeQxdw+UU/iwbiejTPa3tUeyXtBcp2fef0JOJNdD62r/zg==
+  dependencies:
+    semver "^5.3.0"
 
 diff@3.5.0:
   version "3.5.0"
