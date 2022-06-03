@@ -391,6 +391,6 @@
     "@types/vscode": "1.67.0",
     "mocha": "6.2.3",
     "tslint": "5.20.1",
-    "typescript": "3.9.10"
+    "typescript": "4.7.3"
   }
 }
