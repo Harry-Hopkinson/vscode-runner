@@ -387,7 +387,7 @@
   "devDependencies": {
     "@types/micromatch": "4.0.2",
     "@types/mocha": "2.2.48",
-    "@types/node": "16.18.11",
+    "@types/node": "18.11.18",
     "@types/vscode": "1.74.0",
     "mocha": "10.0.0",
     "tslint": "5.20.1",
