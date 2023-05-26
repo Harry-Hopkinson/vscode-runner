@@ -171,10 +171,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.15.tgz#cdc55df400109c2c1a80c98fc9cec4bd3f1097e2"
   integrity sha512-fv9H0101Lom0m76x5UekmudO0Vu611ElbTCLOeSbyX5WM6sme3gJ10PHP83pA1/eXbZpnDoTkeY40jykH38ptQ==
 
-"@types/vscode@1.78.0":
-  version "1.78.0"
-  resolved "https://registry.yarnpkg.com/@types/vscode/-/vscode-1.78.0.tgz#b5600abce8855cf21fb32d0857bcd084b1f83069"
-  integrity sha512-LJZIJpPvKJ0HVQDqfOy6W4sNKUBBwyDu1Bs8chHBZOe9MNuKTJtidgZ2bqjhmmWpUb0TIIqv47BFUcVmAsgaVA==
+"@types/vscode@1.78.1":
+  version "1.78.1"
+  resolved "https://registry.yarnpkg.com/@types/vscode/-/vscode-1.78.1.tgz#027dba038c9e4c3f8e83570e1494aab679030485"
+  integrity sha512-wEA+54axejHu7DhcUfnFBan1IqFD1gBDxAFz8LoX06NbNDMRJv/T6OGthOs52yZccasKfN588EyffHWABkR0fg==
 
 agent-base@6:
   version "6.0.2"
