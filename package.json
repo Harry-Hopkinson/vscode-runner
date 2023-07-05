@@ -379,7 +379,7 @@
     "applicationinsights": "^2.0.0",
     "dotenv": "^16.0.0",
     "micromatch": "^4.0.2",
-    "prettier": "^2.6.2",
+    "prettier": "^3.0.0",
     "tree-kill": "^1.2.2",
     "tsc": "^2.0.3",
     "vsce": "^2.5.3"
