@@ -41,6 +41,14 @@
   dependencies:
     tslib "^2.2.0"
 
+"@azure/core-util@1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@azure/core-util/-/core-util-1.2.0.tgz#3499deba1fc36dda6f1912b791809b6f15d4a392"
+  integrity sha512-ffGIw+Qs8bNKNLxz5UPkz4/VBM/EZY07mPve1ZYFqYUdPwFqRj0RPk0U7LZMOfT7GCck9YjuT1Rfp1PApNl1ng==
+  dependencies:
+    "@azure/abort-controller" "^1.0.0"
+    tslib "^2.2.0"
+
 "@azure/core-util@^1.0.0", "@azure/core-util@^1.1.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@azure/core-util/-/core-util-1.4.0.tgz#c120a56b3e48a9e4d20619a0b00268ae9de891c7"
@@ -226,12 +234,13 @@ anymatch@~3.1.2:
     picomatch "^2.0.4"
 
 applicationinsights@^2.0.0:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/applicationinsights/-/applicationinsights-2.7.2.tgz#e2cdc01cdcda008ba7167d0b06c5d3d5528878ce"
-  integrity sha512-sdkIhSqWntX01EAF5H/YcGgrqDIHNBARzhkQAuCav76KNpo/2enjJ1pTxFB7WgV+S3aTiGR+M7UvKijGlBy5tQ==
+  version "2.7.3"
+  resolved "https://registry.yarnpkg.com/applicationinsights/-/applicationinsights-2.7.3.tgz#8781454d29c0b14c9773f2e892b4cf5e7468ffa5"
+  integrity sha512-JY8+kTEkjbA+kAVNWDtpfW2lqsrDALfDXuxOs74KLPu2y13fy/9WB52V4LfYVTVcW1/jYOXjTxNS2gPZIDh1iw==
   dependencies:
     "@azure/core-auth" "^1.5.0"
     "@azure/core-rest-pipeline" "1.10.1"
+    "@azure/core-util" "1.2.0"
     "@azure/opentelemetry-instrumentation-azure-sdk" "^1.0.0-beta.5"
     "@microsoft/applicationinsights-web-snippet" "^1.0.1"
     "@opentelemetry/api" "^1.4.1"
