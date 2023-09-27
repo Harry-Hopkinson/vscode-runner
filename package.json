@@ -385,7 +385,7 @@
     "vsce": "^2.5.3"
   },
   "devDependencies": {
-    "@types/micromatch": "4.0.2",
+    "@types/micromatch": "4.0.3",
     "@types/mocha": "10.0.1",
     "@types/node": "18.18.0",
     "@types/vscode": "1.82.0",
