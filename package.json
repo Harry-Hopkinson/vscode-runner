@@ -48,7 +48,6 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "dotenv": "^16.0.0",
     "micromatch": "^4.0.2",
     "prettier": "^3.0.0",
     "tree-kill": "^1.2.2",
