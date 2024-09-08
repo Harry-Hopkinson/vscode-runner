@@ -1,6 +1,6 @@
-[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/harryhopkinson.vs-code-runner.svg)](https://marketplace.visualstudio.com/items?itemName=harryhopkinson.vs-code-runner) [![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/harryhopkinson.vs-code-runner.svg)](https://marketplace.visualstudio.com/items?itemName=harryhopkinson.vs-code-runner) [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/harryhopkinson.vs-code-runner.svg)](https://marketplace.visualstudio.com/items?itemName=harryhopkinson.vs-code-runner)
+[![Marketplace Version](https://vsmarketplacebadge.apphb.com/version-short/harryhopkinson.vscode-runner.svg)](https://marketplace.visualstudio.com/items?itemName=harryhopkinson.vscode-runner) [![Downloads](https://vsmarketplacebadge.apphb.com/downloads-short/harryhopkinson.vscode-runner.svg)](https://marketplace.visualstudio.com/items?itemName=harryhopkinson.vscode-runner) [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/harryhopkinson.vscode-runner.svg)](https://marketplace.visualstudio.com/items?itemName=harryhopkinson.vscode-runner)
 
-# vs-code-runner
+# vscode-runner
 
 <a href="https://github.com/Harry-Hopkinson">
 	<img src= "https://images.weserv.nl/?url=avatars.githubusercontent.com/u/63599884?v=4&h=100&w=100&fit=cover&mask=circle&maxage=7d">

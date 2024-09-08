@@ -13,21 +13,21 @@ export function activate(context: vscode.ExtensionContext) {
     "code-runner.run",
     (fileUri: vscode.Uri) => {
       codeManager.run(null, fileUri);
-    }
+    },
   );
 
   const runCustomCommand = vscode.commands.registerCommand(
     "code-runner.runCustomCommand",
     () => {
       codeManager.runCustomCommand();
-    }
+    },
   );
 
   const runByLanguage = vscode.commands.registerCommand(
     "code-runner.runByLanguage",
     () => {
       codeManager.runByLanguage();
-    }
+    },
   );
 
   const stop = vscode.commands.registerCommand("code-runner.stop", () => {

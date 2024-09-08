@@ -1,8 +1,8 @@
 {
-  "name": "vs-code-runner",
+  "name": "vscode-runner",
   "displayName": "vscode-runner",
   "description": "Run C, C++, Java, JavaScript, PHP, Python, Perl, Ruby, Go, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, R, Visual Basic .NET, Objective-C, Rust, Kotlin, Dart, and Haskell",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "featureFlags": {
     "usingNewPythonInterpreterPathApi": true,
     "usingNewPythonInterpreterPathApiV2": true
@@ -10,7 +10,7 @@
   "publisher": "HarryHopkinson",
   "icon": "./images/icon.png",
   "engines": {
-    "vscode": "^1.56.0"
+    "vscode": "^1.75.0"
   },
   "categories": [
     "Programming Languages",
@@ -30,18 +30,39 @@
     "java",
     "typescript"
   ],
-  "homepage": "https://github.com/Harry-Hopkinson/vs-code-runner.git",
+  "homepage": "https://github.com/Harry-Hopkinson/vscode-runner.git",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Harry-Hopkinson/vs-code-runner.git"
+    "url": "https://github.com/Harry-Hopkinson/vscode-runner.git"
   },
   "activationEvents": [
-    "onCommand:code-runner.run",
-    "onCommand:code-runner.runCustomCommand",
-    "onCommand:code-runner.runByLanguage",
     "onStartupFinished"
   ],
   "main": "./out/src/extension",
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "tslint": "tslint -t verbose src/**/*.ts",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "micromatch": "^4.0.2",
+    "prettier": "^3.0.0",
+    "tree-kill": "^1.2.2",
+    "tsc": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/micromatch": "4.0.3",
+    "@types/mocha": "10.0.2",
+    "@types/node": "18.18.3",
+    "@types/vscode": "1.83.0",
+    "mocha": "10.2.0",
+    "tslint": "5.20.1",
+    "typescript": "4.7.3"
+  },
   "contributes": {
     "commands": [
       {
@@ -279,12 +300,6 @@
           "description": "Whether to save the current file before running.",
           "scope": "resource"
         },
-        "code-runner.enableAppInsights": {
-          "type": "boolean",
-          "default": true,
-          "description": "Whether to enable AppInsights to track user telemetry data.",
-          "scope": "resource"
-        },
         "code-runner.showExecutionMessage": {
           "type": "boolean",
           "default": true,
@@ -368,29 +383,5 @@
         "path": "./syntaxes/code-runner-output.tmLanguage"
       }
     ]
-  },
-  "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
-    "tslint": "tslint -t verbose src/**/*.ts",
-    "prettier": "prettier --write ."
-  },
-  "dependencies": {
-    "applicationinsights": "^2.0.0",
-    "dotenv": "^16.0.0",
-    "micromatch": "^4.0.2",
-    "prettier": "^3.0.0",
-    "tree-kill": "^1.2.2",
-    "tsc": "^2.0.3",
-    "vsce": "^2.5.3"
-  },
-  "devDependencies": {
-    "@types/micromatch": "4.0.3",
-    "@types/mocha": "10.0.2",
-    "@types/node": "18.18.3",
-    "@types/vscode": "1.83.0",
-    "mocha": "10.2.0",
-    "tslint": "5.20.1",
-    "typescript": "4.7.3"
   }
 }

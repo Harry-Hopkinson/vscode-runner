@@ -4,7 +4,6 @@ import * as micromatch from "micromatch";
 import * as os from "os";
 import { basename, dirname, extname, join } from "path";
 import * as vscode from "vscode";
-import { AppInsightsClient } from "./appInsightsClient";
 import { Constants } from "./constants";
 import { Utility } from "./utility";
 
@@ -23,13 +22,11 @@ export class CodeManager implements vscode.Disposable {
   private _document: vscode.TextDocument;
   private _workspaceFolder: string;
   private _config: vscode.WorkspaceConfiguration;
-  private _appInsightsClient: AppInsightsClient;
   private _TERMINAL_DEFAULT_SHELL_WINDOWS: string | null = null;
 
   constructor() {
     this._outputChannel = vscode.window.createOutputChannel("Code");
     this._terminal = null;
-    this._appInsightsClient = new AppInsightsClient();
   }
 
   public onDidCloseTerminal(): void {
@@ -62,7 +59,7 @@ export class CodeManager implements vscode.Disposable {
     // undefined or null
     if (executor == null) {
       vscode.window.showInformationMessage(
-        "Code language not supported or defined."
+        "Code language not supported or defined.",
       );
       return;
     }
@@ -95,7 +92,6 @@ export class CodeManager implements vscode.Disposable {
   }
 
   public runByLanguage(): void {
-    this._appInsightsClient.sendEvent("runByLanguage");
     const config = this.getConfiguration("code-runner");
     const executorMap = config.get<any>("executorMap");
     vscode.window
@@ -110,7 +106,6 @@ export class CodeManager implements vscode.Disposable {
   }
 
   public stop(): void {
-    this._appInsightsClient.sendEvent("stop");
     this.stopRunning();
   }
 
@@ -138,7 +133,7 @@ export class CodeManager implements vscode.Disposable {
       vscode.commands.executeCommand(
         "setContext",
         "code-runner.codeRunning",
-        false
+        false,
       );
       const kill = require("tree-kill");
       kill(this._process.pid);
@@ -176,7 +171,7 @@ export class CodeManager implements vscode.Disposable {
     if (vscode.workspace.workspaceFolders) {
       if (this._document) {
         const workspaceFolder = vscode.workspace.getWorkspaceFolder(
-          this._document.uri
+          this._document.uri,
         );
         if (workspaceFolder) {
           return workspaceFolder.uri.fsPath;
@@ -191,7 +186,7 @@ export class CodeManager implements vscode.Disposable {
   private getCodeFileAndExecute(
     fileExtension: string,
     executor: string,
-    appendFile: boolean = true
+    appendFile: boolean = true,
   ): any {
     let selection;
     const activeTextEditor = vscode.window.activeTextEditor;
@@ -257,11 +252,11 @@ export class CodeManager implements vscode.Disposable {
   private createRandomFile(
     content: string,
     folder: string,
-    fileExtension: string
+    fileExtension: string,
   ) {
     let fileType = "";
     const languageIdToFileExtensionMap = this._config.get<any>(
-      "languageIdToFileExtensionMap"
+      "languageIdToFileExtensionMap",
     );
     if (this._languageId && languageIdToFileExtensionMap[this._languageId]) {
       fileType = languageIdToFileExtensionMap[this._languageId];
@@ -318,7 +313,7 @@ export class CodeManager implements vscode.Disposable {
     // executor is undefined or null
     if (executor == null && fileExtension) {
       const executorMapByFileExtension = this._config.get<any>(
-        "executorMapByFileExtension"
+        "executorMapByFileExtension",
       );
       executor = executorMapByFileExtension[fileExtension];
       if (executor != null) {
@@ -404,7 +399,7 @@ export class CodeManager implements vscode.Disposable {
    */
   private async getFinalCommandToRunCodeFile(
     executor: string,
-    appendFile: boolean = true
+    appendFile: boolean = true,
   ): Promise<string> {
     let cmd = executor;
 
@@ -438,7 +433,7 @@ export class CodeManager implements vscode.Disposable {
         {
           regex: /\$dirWithoutTrailingSlash/g,
           replaceValue: this.quoteFileName(
-            this.getCodeFileDirWithoutTrailingSlash()
+            this.getCodeFileDirWithoutTrailingSlash(),
           ),
         },
         // A placeholder that has to be replaced by the directory of the code file
@@ -465,7 +460,7 @@ export class CodeManager implements vscode.Disposable {
       executor = executor.replace(/&&/g, replacement);
       executor = executor.replace(
         /\$dir\$fileNameWithoutExt/g,
-        ".\\$fileNameWithoutExt"
+        ".\\$fileNameWithoutExt",
       );
       return executor + " }";
     }
@@ -498,7 +493,7 @@ export class CodeManager implements vscode.Disposable {
         command = command
           .replace(
             /([A-Za-z]):\\/g,
-            (match, p1) => `${terminalRoot}${p1.toLowerCase()}/`
+            (match, p1) => `${terminalRoot}${p1.toLowerCase()}/`,
           )
           .replace(/\\/g, "/");
       } else if (
@@ -520,7 +515,7 @@ export class CodeManager implements vscode.Disposable {
 
   private async executeCommandInTerminal(
     executor: string,
-    appendFile: boolean = true
+    appendFile: boolean = true,
   ) {
     let isNewTerminal = false;
     if (this._terminal === null) {
@@ -528,7 +523,6 @@ export class CodeManager implements vscode.Disposable {
       isNewTerminal = true;
     }
     this._terminal.show(this._config.get<boolean>("preserveFocus"));
-    this.sendRunEvent(executor, true);
     executor = this.changeExecutorFromCmdToPs(executor);
     let command = await this.getFinalCommandToRunCodeFile(executor, appendFile);
     command = this.changeFilePathForBashOnWindows(command);
@@ -544,33 +538,32 @@ export class CodeManager implements vscode.Disposable {
 
   private async executeCommandInOutputChannel(
     executor: string,
-    appendFile: boolean = true
+    appendFile: boolean = true,
   ) {
     this._isRunning = true;
     vscode.commands.executeCommand(
       "setContext",
       "code-runner.codeRunning",
-      true
+      true,
     );
     const clearPreviousOutput = this._config.get<boolean>(
-      "clearPreviousOutput"
+      "clearPreviousOutput",
     );
     if (clearPreviousOutput) {
       this._outputChannel.clear();
     }
     const showExecutionMessage = this._config.get<boolean>(
-      "showExecutionMessage"
+      "showExecutionMessage",
     );
     this._outputChannel.show(this._config.get<boolean>("preserveFocus"));
     const spawn = require("child_process").spawn;
     const command = await this.getFinalCommandToRunCodeFile(
       executor,
-      appendFile
+      appendFile,
     );
     if (showExecutionMessage) {
       this._outputChannel.appendLine("[Running] " + command);
     }
-    this.sendRunEvent(executor, false);
     const startTime = new Date();
     this._process = spawn(command, [], { cwd: this._cwd, shell: true });
 
@@ -587,14 +580,14 @@ export class CodeManager implements vscode.Disposable {
       vscode.commands.executeCommand(
         "setContext",
         "code-runner.codeRunning",
-        false
+        false,
       );
       const endTime = new Date();
       const elapsedTime = (endTime.getTime() - startTime.getTime()) / 1000;
       this._outputChannel.appendLine("");
       if (showExecutionMessage) {
         this._outputChannel.appendLine(
-          "[Done] exited with code=" + code + " in " + elapsedTime + " seconds"
+          "[Done] exited with code=" + code + " in " + elapsedTime + " seconds",
         );
         this._outputChannel.appendLine("");
       }
@@ -602,14 +595,5 @@ export class CodeManager implements vscode.Disposable {
         fs.unlinkSync(this._codeFile);
       }
     });
-  }
-
-  private sendRunEvent(executor: string, runFromTerminal: boolean) {
-    const properties = {
-      runFromTerminal: runFromTerminal.toString(),
-      runFromExplorer: this._runFromExplorer.toString(),
-      isTmpFile: this._isTmpFile.toString(),
-    };
-    this._appInsightsClient.sendEvent(executor, properties);
   }
 }

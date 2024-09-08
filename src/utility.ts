@@ -4,7 +4,7 @@ import { Constants } from "./constants";
 
 export class Utility {
   public static async getPythonPath(
-    document: vscode.TextDocument
+    document: vscode.TextDocument,
   ): Promise<string> {
     try {
       const extension = vscode.extensions.getExtension("ms-python.python");
@@ -24,7 +24,7 @@ export class Utility {
         return execCommand ? execCommand.join(" ") : Constants.python;
       } else {
         return this.getConfiguration("python", document).get<string>(
-          "pythonPath"
+          "pythonPath",
         );
       }
     } catch (error) {
@@ -34,7 +34,7 @@ export class Utility {
 
   public static getConfiguration(
     section?: string,
-    document?: vscode.TextDocument
+    document?: vscode.TextDocument,
   ): vscode.WorkspaceConfiguration {
     if (document) {
       return vscode.workspace.getConfiguration(section, document.uri);
