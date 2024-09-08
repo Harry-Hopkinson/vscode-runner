@@ -2,7 +2,7 @@
   "name": "vs-code-runner",
   "displayName": "vs-code-runner",
   "description": "Run C, C++, Java, JavaScript, PHP, Python, Perl, Ruby, Go, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, R, Visual Basic .NET, Objective-C, Rust, Kotlin, Dart, and Haskell",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "featureFlags": {
     "usingNewPythonInterpreterPathApi": true,
     "usingNewPythonInterpreterPathApiV2": true
