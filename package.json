@@ -8,9 +8,9 @@
     "usingNewPythonInterpreterPathApiV2": true
   },
   "publisher": "HarryHopkinson",
-  "icon": "./images/icon.png",
+  "icon": "images/icon.png",
   "engines": {
-    "vscode": "^1.75.0"
+    "vscode": "^1.93.0"
   },
   "categories": [
     "Programming Languages",
@@ -52,10 +52,10 @@
     "tsc": "^2.0.3"
   },
   "devDependencies": {
-    "prettier": "^3.0.0",
     "@types/micromatch": "4.0.9",
-    "@types/node": "20.16.5",
+    "@types/node": "^22.5.4",
     "@types/vscode": "1.93.0",
+    "prettier": "^3.0.0",
     "typescript": "5.5.4"
   },
   "contributes": {
