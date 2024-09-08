@@ -43,7 +43,6 @@
     "vscode:prepublish": "tsc -p ./",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "tslint": "tslint -t verbose src/**/*.ts",
     "lint": "prettier --check .",
     "format": "prettier --write ."
   },
@@ -57,7 +56,6 @@
     "@types/micromatch": "4.0.9",
     "@types/node": "18.18.3",
     "@types/vscode": "1.83.0",
-    "tslint": "5.20.1",
     "typescript": "4.7.3"
   },
   "contributes": {
