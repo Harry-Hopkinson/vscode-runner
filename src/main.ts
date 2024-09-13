@@ -5,7 +5,7 @@ import * as os from "os";
 import { basename, dirname, extname, join } from "path";
 import * as vscode from "vscode";
 import { Constants } from "./constants";
-import { GetPythonPath, UtilityGetConfiguration } from "./utils";
+import { GetPythonPath, UtilityGetConfiguration } from "./util";
 
 const TmpDir = os.tmpdir();
 let outputChannel: vscode.OutputChannel =
