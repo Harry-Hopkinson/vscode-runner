@@ -4,8 +4,8 @@ import * as micromatch from "micromatch";
 import * as os from "os";
 import { basename, dirname, extname, join } from "path";
 import * as vscode from "vscode";
-import { Constants } from "./Constants";
-import { GetPythonPath, UtilityGetConfiguration } from "./Utils";
+import { Constants } from "./constants";
+import { GetPythonPath, UtilityGetConfiguration } from "./utils";
 
 const TmpDir = os.tmpdir();
 let outputChannel: vscode.OutputChannel =

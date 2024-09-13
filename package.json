@@ -38,7 +38,7 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": "./out/src/Extension",
+  "main": "./out/src/extension",
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
     "compile": "tsc -p ./",

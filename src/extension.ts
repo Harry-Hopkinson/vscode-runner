@@ -7,7 +7,7 @@ import {
   RunByLanguage,
   Stop,
   Dispose,
-} from "./CodeManager";
+} from "./main";
 
 export function activate(context: vscode.ExtensionContext) {
   vscode.window.onDidCloseTerminal(() => {

@@ -1,6 +1,6 @@
 "use strict";
 import * as vscode from "vscode";
-import { Constants } from "./Constants";
+import { Constants } from "./constants";
 
 export async function GetPythonPath(
   document: vscode.TextDocument,
