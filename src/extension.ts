@@ -1,44 +1,50 @@
 "use strict";
 import * as vscode from "vscode";
-import { CodeManager } from "./codeManager";
+import {
+  OnDidCloseTerminal,
+  Run,
+  RunCustomCommand,
+  RunByLanguage,
+  Stop,
+  Dispose,
+} from "./CodeManager";
 
 export function activate(context: vscode.ExtensionContext) {
-  const codeManager = new CodeManager();
-
   vscode.window.onDidCloseTerminal(() => {
-    codeManager.onDidCloseTerminal();
+    OnDidCloseTerminal();
   });
 
   const run = vscode.commands.registerCommand(
     "code-runner.run",
     (fileUri: vscode.Uri) => {
-      codeManager.run(null, fileUri);
+      Run(null, fileUri);
     },
   );
 
   const runCustomCommand = vscode.commands.registerCommand(
     "code-runner.runCustomCommand",
     () => {
-      codeManager.runCustomCommand();
+      RunCustomCommand();
     },
   );
 
   const runByLanguage = vscode.commands.registerCommand(
     "code-runner.runByLanguage",
     () => {
-      codeManager.runByLanguage();
+      RunByLanguage();
     },
   );
 
   const stop = vscode.commands.registerCommand("code-runner.stop", () => {
-    codeManager.stop();
+    Stop();
   });
 
   context.subscriptions.push(run);
   context.subscriptions.push(runCustomCommand);
   context.subscriptions.push(runByLanguage);
   context.subscriptions.push(stop);
-  context.subscriptions.push(codeManager);
 }
 
-export function deactivate() {}
+export function deactivate() {
+  Dispose();
+}

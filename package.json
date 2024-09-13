@@ -2,7 +2,7 @@
   "name": "vs-code-runner",
   "displayName": "vs-code-runner",
   "description": "Run C, C++, Java, JavaScript, PHP, Python, Perl, Ruby, Go, C#, VBScript, TypeScript, CoffeeScript, Scala, Swift, R, Visual Basic .NET, Objective-C, Rust, Kotlin, Dart, and Haskell",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "featureFlags": {
     "usingNewPythonInterpreterPathApi": true,
     "usingNewPythonInterpreterPathApiV2": true
@@ -38,7 +38,7 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "main": "./out/src/extension",
+  "main": "./out/src/Extension",
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
     "compile": "tsc -p ./",
