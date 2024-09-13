@@ -36,9 +36,6 @@
     "url": "https://github.com/Harry-Hopkinson/vscode-runner.git"
   },
   "activationEvents": [
-    "onCommand:code-runner.run",
-    "onCommand:code-runner.runCustomCommand",
-    "onCommand:code-runner.runByLanguage",
     "onStartupFinished"
   ],
   "main": "./out/src/extension",
